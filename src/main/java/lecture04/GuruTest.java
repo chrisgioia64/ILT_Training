@@ -1,5 +1,6 @@
 package lecture04;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -13,9 +14,26 @@ public class GuruTest {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		DriverFactory.initialize();
-		WebDriver driver = new EdgeDriver();
+		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.get("https://demo.guru99.com/test/login.html");
+		
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e1) {
+			e1.printStackTrace();
+		}
+		
+		List<WebElement> frames = driver.findElements(By.tagName("iframe"));
+		for (WebElement f : frames) {
+			System.out.println(f.getAttribute("id") + ":" + f.getAttribute("class"));
+		}
+		
+		WebElement divElement = driver.findElement(By.id("ccpa-consent-notice"));
+		WebDriver driver2 = driver.switchTo().frame(divElement);
+		WebElement ele = driver2.findElement(By.id("saveAndExit"));
+		ele.click();
+		
 		
 		WebElement email = driver.findElement(By.id("email"));
 		WebElement password = driver.findElement(By.id("passwd"));
@@ -50,6 +68,10 @@ public class GuruTest {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+
+		
+		System.out.println("popup clicked");
+		
 		email = driver.findElement(By.id("email"));
 		password = driver.findElement(By.id("passwd"));
 		

@@ -14,8 +14,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ApachePOI_ReadFile {
 
-	public static final String DOC_DIRECTORY = "docs";
-	
 	public static void main(String[] args) throws IOException {
 		File myFile = new File("Writesheet.xlsx"); 
 		FileInputStream fis = new FileInputStream(myFile); // Finds the workbook instance for XLSX file XSSFWorkbook myWorkBook = new XSSFWorkbook (fis); // Return first sheet from the XLSX workbook XSSFSheet mySheet = myWorkBook.getSheetAt(0);

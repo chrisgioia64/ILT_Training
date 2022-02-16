@@ -35,6 +35,7 @@ public class DropdownSelectionDibya {
         System.out.println("Select the Option by Index 4");
         select.selectByIndex(4);
         System.out.println("Select value is: " + select.getFirstSelectedOption().getText());
+        
 
         //Step#6- Selecting the option as 'Magenta'-- selectByVisibleText
         System.out.println("Select the Option by Text Magenta");
