@@ -85,7 +85,6 @@ public class FormDataPage {
 		fillDOB(item);
 		fillSubjects(item.getSubjects());
 		fillHobbies(item.getHobbies());
-		Utils.sleep(3000);
 		addressField.sendKeys(item.getAddress());
 		fillStateCity(item.getState(), item.getCity());
 		
