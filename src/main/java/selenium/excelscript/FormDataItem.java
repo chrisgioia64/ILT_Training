@@ -17,6 +17,7 @@ public class FormDataItem {
 	private String address;
 	private String state;
 	private String city;
+	private boolean passes; // indicates whether I could successfully write to the form
 	
 	public String getFirstName() {
 		return firstName;
@@ -95,6 +96,12 @@ public class FormDataItem {
 	}
 	public void setCity(String city) {
 		this.city = city;
+	}
+	public boolean isPasses() {
+		return passes;
+	}
+	public void setPasses(boolean passes) {
+		this.passes = passes;
 	}
 
 }
