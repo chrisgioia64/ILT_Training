@@ -19,6 +19,8 @@ import org.testng.annotations.AfterClass;
 public class BrowserStackTest {
 
 	WebDriver driver;
+	
+	public static String f = "Hello";
 
 	@BeforeClass
 	public void testSetup()
@@ -53,7 +55,6 @@ public class BrowserStackTest {
 		driver.findElement(By.id("user_password")).sendKeys("Koch2357");
 		driver.findElement(By.xpath("//input[@name='terms_and_conditions']")).click();
 		driver.findElement(By.id("user_submit")).click();
-
 	}
 
 	@AfterMethod

@@ -3,7 +3,8 @@ package test.testng;
 import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 import static org.hamcrest.MatcherAssert.assertThat; 
-//import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.*;
+import static org.testng.Assert.assertEquals;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -14,6 +15,7 @@ public class HamcrestExample {
 	@Test
 	public void testInteger() {
 		assertThat("integer same", 1, Matchers.equalTo(2));
+		assertEquals(true, true);
 	}
 	
 	@Test
